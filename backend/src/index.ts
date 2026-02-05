@@ -7,6 +7,8 @@ dotenv.config();
 
 import passport from './config/passport.js';
 import authRoutes from './routes/auth.js';
+import summaryRoutes from './routes/summary.js';
+import userRoutes from './routes/user.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -29,6 +31,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/auth', authRoutes);
+app.use('/api/summaries', summaryRoutes);
+app.use('/api/user', userRoutes);
 
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
