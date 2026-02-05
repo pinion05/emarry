@@ -32,18 +32,18 @@ app.use(passport.session());
 
 import { emailSummaryJob } from './cron/email-summary.job.js';
 import { tokenRefreshJob } from './cron/token-refresh.job.js';
+import path from 'path';
 
 console.log('✅ Cron jobs registered');
 
 // Serve Next.js static files in production
 if (process.env.NODE_ENV === 'production') {
-  const path = await import('path');
-  app.use(express.static(path.default.resolve('../frontend/out')));
+  app.use(express.static(path.resolve('../frontend/out')));
 
   // SPA fallback - serve index.html for non-API routes
   app.use((req, res, next) => {
     if (!req.path.startsWith('/auth') && !req.path.startsWith('/api')) {
-      res.sendFile(path.default.resolve('../frontend/out/index.html'));
+      res.sendFile(path.resolve('../frontend/out/index.html'));
     } else {
       next();
     }
