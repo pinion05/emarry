@@ -5,7 +5,7 @@ builder = "NIXPACKS"
 healthcheckPath = "/health"
 healthcheckTimeout = 300
 restartPolicyType = "ON_FAILURE"
-startCommand = "bun run start"
+startCommand = "cd backend && bun run railway"
 
 [[services]]
 name = "emarry"

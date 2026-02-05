@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
+    "build:full": "cd ../frontend && bun run build && cd ../backend && tsc",
     "start": "node dist/index.js",
-    "railway": "bun run migrations/run.ts && bun start"
+    "railway": "bun run build:full && bun run migrations/run.ts && bun start"
   },
   "dependencies": {
     "@types/node-cron": "^3.0.11",
