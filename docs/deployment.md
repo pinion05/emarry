@@ -14,10 +14,23 @@ emarry uses Railway for hosting both backend and frontend in a single service.
 ### Step 1: Create Railway Project
 
 1. Go to [Railway](https://railway.app) and login
-2. Click "New Project" → "Deploy from GitHub repo"
-3. Select `pinion05/emarry` repository
-4. Choose branch: `main`
-5. Click "Deploy Now"
+2. Click "New Project"
+3. Click "New Service" → "Deploy from GitHub repo"
+4. Click "Connect GitHub" (한 번만 필요)
+5. Select `pinion05/emarry` repository
+6. Choose branch: `main`
+7. **Root Directory**: `backend` (중요!)
+8. Click "Deploy"
+
+### Step 2: Configure Root Directory and Start Command
+
+Railway에서 자동으로 빌드가 실패하면:
+
+1. Railway 프로젝트 → 배포된 서비스 클릭
+2. **Settings** 탭
+3. **Root Directory**: `backend`로 설정
+4. **Start Command**: `bun run railway`로 설정
+5. **Re-deploy** 클릭
 
 ### Step 2: Add PostgreSQL Database
 
