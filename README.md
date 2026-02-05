@@ -11,7 +11,7 @@ emarry (Email + Marriage) connects to your Gmail account and uses AI to summariz
 - **Frontend**: Next.js 14 + shadcn/ui
 - **Backend**: Express.js + node-cron
 - **Database**: PostgreSQL
-- **Deployment**: Railway (backend) + Vercel (frontend)
+- **Deployment**: Railway (full-stack)
 
 ## Quick Start
 
@@ -28,27 +28,30 @@ emarry (Email + Marriage) connects to your Gmail account and uses AI to summariz
    cd emarry
    ```
 
-2. Set up backend:
+2. Install dependencies (root directory):
    ```bash
-   cd backend
    bun install
+   ```
+
+3. Set up environment variables:
+   ```bash
    cp .env.example .env
    # Edit .env with your credentials
-   bun run migrate
-   bun run dev
    ```
 
-3. Set up frontend:
+4. Run database migration:
    ```bash
-   cd frontend
-   bun install
-   cp .env.example .env.local
+   bun run migrate
+   ```
+
+5. Start development server:
+   ```bash
    bun run dev
    ```
 
-4. Access the application:
-   - Frontend: http://localhost:3000
-   - Backend: http://localhost:3001
+6. Access the application:
+   - App: http://localhost:3000
+   - API: http://localhost:3001
 
 ## Environment Variables
 

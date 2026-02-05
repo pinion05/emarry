@@ -10,11 +10,12 @@
 
 ## Production Testing
 - [ ] Railway deployment succeeds
-- [ ] Vercel deployment succeeds
+- [ ] Database migration runs successfully
 - [ ] OAuth callback works in production
 - [ ] Health check endpoint responds
 - [ ] Environment variables are set correctly
 - [ ] Database is accessible from Railway
+- [ ] Cron jobs are running (check logs)
 
 ## Integration Testing
 - [ ] User can login with Google
@@ -27,7 +28,7 @@
 - Working Gmail OAuth integration
 - Automated email summarization
 - Web dashboard for viewing summaries
-- Deployed on Railway and Vercel
+- Deployed on Railway (full-stack)
 - Database with proper schema
 - Token refresh mechanism
 - API documentation
