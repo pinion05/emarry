@@ -30,6 +30,11 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+import { emailSummaryJob } from './cron/email-summary.job.js';
+import { tokenRefreshJob } from './cron/token-refresh.job.js';
+
+console.log('✅ Cron jobs registered');
+
 app.use('/auth', authRoutes);
 app.use('/api/summaries', summaryRoutes);
 app.use('/api/user', userRoutes);
