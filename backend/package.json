@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
-    "build:full": "cd ../frontend && bun run build && cd ../backend && tsc",
+    "build:full": "cd ../frontend && bun run build && tsc",
     "start": "node dist/index.js",
     "railway": "bun run build:full && bun run migrations/run.ts && bun start"
   },
