@@ -14,10 +14,15 @@ const PORT = process.env.PORT || 3001;
 // Middleware
 app.use(express.json());
 app.use(session({
-  secret: process.env.SESSION_SECRET || 'emarry-session-secret',
+  secret: process.env.SESSION_SECRET || (() => { throw new Error('SESSION_SECRET environment variable is required'); })(),
   resave: false,
   saveUninitialized: false,
-  cookie: { secure: process.env.NODE_ENV === 'production' }
+  cookie: {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'strict',
+    maxAge: 24 * 60 * 60 * 1000 // 24 hours
+  }
 }));
 
 app.use(passport.initialize());
