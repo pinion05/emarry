@@ -1,0 +1,15 @@
+{
+  "name": "emarry-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "migrate": "bun run migrations/run.ts"
+  },
+  "dependencies": {
+    "pg": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.16.0",
+    "bun-types": "latest"
+  }
+}
