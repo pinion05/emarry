@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "railway": "bun run migrations/run.ts && bun start"
   },
   "dependencies": {
     "dotenv": "^16.3.1",
